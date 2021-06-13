@@ -1,7 +1,7 @@
 <div class="intro">
-  <h1>Club Page Layout Builder</h1>
+  <h1>ClubPal: A Marapets Club Page Layout Builder</h1>
   <p>
-    This tool allows you to build a Marapets club page using rows and columns. The <b>Code Output</b> box spits out code that you can paste into your club page editor. The <b>Layout Preview</b> <i>(displays after adding your first row)</i> shows you what your layout will actually look like. Both the Code Output and Layout Preview update in real time as you make changes. Have a play and if you have any feedback or suggestions feel free to send me a message <a href="https://www.marapets.com/maramail.php?do=send&id=Eric" target="_blank" rel="noreferrer noopener">here</a>.
+    This tool allows you to build a Marapets club page using rows and columns. The <b>Code Output</b> box spits out code that you can paste straight into your club page editor. The <b>Layout Preview</b> <i>(displays after adding your first row)</i> shows you what your layout will actually look like. Both the Code Output and Layout Preview update in real time as you make changes. Have a play and if you have any feedback or suggestions feel free to send me a message <a href="https://www.marapets.com/maramail.php?do=send&id=Eric" target="_blank" rel="noreferrer noopener">here</a>.
   </p>
   <p>
     You can use <a href="https://www.markdownguide.org/getting-started/" target="_blank" rel="noopener noreferrer">Markdown</a> to format your content however you like.

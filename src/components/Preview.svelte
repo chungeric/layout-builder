@@ -18,17 +18,21 @@
         <div class="layout__row">
           <div class="layout__columns">
             {#each row.columns as column}
-              <div class={`layout__col ${row.scrollable ? 'layout__scrollable' : ''}`}>
+              <div class={row.scrollable ? 'layout__col layout__scrollable' : 'layout__col'}>
                 {@html marked(column)}
               </div>
             {/each}
           </div>
         </div>
       {/each}
+      <center class="credit">Built with https://clubpal.vercel.app/</center>
     </div>
     <style>
+      .credit {
+        color: rgba(51, 51, 51, 0.1);
+      }
       #layout {
-        background: #eee;
+        background: hsl(0, 0%, 96%);
         padding: 30px;
         color: #333;
         line-height: 1.4;
@@ -53,7 +57,7 @@
         gap: 20px;
         grid-auto-columns: minmax(10px, 1fr);
       }
-      @media (max-width: 600px) {
+      @media (max-width: 480px) {
         .layout__columns {
           grid-auto-flow: row;
         }

@@ -41,6 +41,7 @@
 	main {
     max-width: 728px;
     margin: 0 auto;
-    padding: 50px 30px;
+    padding: 50px 20px;
 	}
+
 </style>

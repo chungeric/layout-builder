@@ -69,7 +69,7 @@
     margin-bottom: 30px;
     display: flex;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .options {
       flex-direction: column;
     }
@@ -83,7 +83,7 @@
     gap: 20px;
     grid-auto-columns: minmax(10px, 1fr);
   }
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .columns {
       grid-auto-flow: row;
     }
