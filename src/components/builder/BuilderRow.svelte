@@ -1,5 +1,5 @@
-<script>
-  import Radio from '../inputs/Radio.svelte'
+<script lang="ts">
+  import Radio from '../../inputs/Radio.svelte'
   export let rowIndex;
   export let row;
   function selectNumCols(e) {
@@ -18,11 +18,8 @@
 </script>
 
 
-
-<div class="options-wrap">
-
-  <h3 class="underline">Row {rowIndex + 1}</h3>
-
+<div class="builder-row-container">
+  <h3 class="">Row {rowIndex + 1}</h3>
   <div class="options">
     <div>
       <h4>Number of Columns</h4>
@@ -44,18 +41,30 @@
       </div>
     </div>
   </div>
-
   <div class="columns">
     {#each row.columns as _, i}
-      <textarea rows="10" bind:value={row.columns[i]}></textarea>
+      <div class="column">
+        <h4>Column {i+1}</h4>
+        <textarea rows="10" bind:value={row.columns[i]}></textarea>
+      </div>
     {/each}
   </div>
 
 </div>
 
-
-
 <style>
+  .builder-row-container {
+    background: hsl(0, 0%, 96%);
+    padding: 0 20px 20px;
+    margin-bottom: 30px;
+  }
+  .builder-row-container > h3 {
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 15px 20px;
+    background: hsl(0, 0%, 92%);
+  }
   .options {
     margin-bottom: 30px;
     display: flex;
@@ -79,7 +88,13 @@
       grid-auto-flow: row;
     }
   }
-  .columns textarea {
+  .column h4 {
+    margin-top: 0;
+  }
+  .column textarea {
+    display: block;
+    width: 100%;
     resize: none;
+    margin-bottom: 0;
   }
 </style>
