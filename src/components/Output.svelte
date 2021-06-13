@@ -12,7 +12,7 @@
 </script>
 
 <div class="output-container">
-  <h2>Output:</h2>
+  <h2>Code Output:</h2>
   <p>Copy and paste the output below into your club page editor.</p>
 
   <!-- Output -->

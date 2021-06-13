@@ -31,11 +31,11 @@
         background: #eee;
         padding: 30px;
         color: #333;
-        line-height: 1.3;
+        line-height: 1.4;
         font-family: 'PT Sans', sans-serif;
       }
       .layout__scrollable {
-        overflow: scroll;
+        overflow: auto;
         max-height: 250px;
       }
       .layout__row:first-child {
