@@ -65,6 +65,13 @@
       img {
         max-width: 100%;
       }
+      #layout a {
+        color: #3665b3;
+      }
+      #layout a:active,
+      #layout a:visited {
+        color: #224987;
+      }
     </style>
   </div>
 </div>

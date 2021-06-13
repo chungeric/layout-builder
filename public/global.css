@@ -45,3 +45,11 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+a {
+	color: #3665b3;
+}
+a:active,
+a:visited {
+	color: #224987;
+}
