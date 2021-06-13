@@ -7,13 +7,16 @@
 <script lang="ts">
   import marked from "marked";
   import type { RowType } from "../types";
+  import { getLightness } from "../utils/getLightness";
   export let rows: RowType[];
+  export let pageColor
+  $: textColor = getLightness(pageColor) > 0.5 ? '#000' : '#fff'
 </script>
 
 <div class="layout-preview-container">
   <h2>Layout Preview</h2>
   <div bind:this={preview}>
-    <div id="layout">
+    <div id="layout" style={`background: ${pageColor}; color: ${textColor};`}>
       {#each rows as row}
         <div class="layout__row">
           <div class="layout__columns">
@@ -29,7 +32,7 @@
     </div>
     <style>
       .credit {
-        color: rgba(51, 51, 51, 0.1);
+        opacity: 0.1;
       }
       #layout {
         background: hsl(0, 0%, 96%);

@@ -1,10 +1,11 @@
-<script lang="ts"> 
+<script lang="ts">
 	import { onMount, afterUpdate } from 'svelte'
 	import Intro from './components/Intro.svelte'
 	import LayoutBuilder from './components/builder/LayoutBuilder.svelte'
 	import Output, { useOutput } from './components/Output.svelte';
 	import Preview, { usePreview } from './components/Preview.svelte'
 	let rows = []
+	let pageColor = '#eeeeee'
 	onMount(() => {
 		generateCode()
 	})
@@ -30,9 +31,9 @@
 	<Intro />
 	<Output />
 	{#if (rows.length)}
-		<Preview bind:rows={rows} />
+		<Preview bind:rows={rows} bind:pageColor={pageColor} />
 	{/if}
-	<LayoutBuilder bind:rows={rows} />
+	<LayoutBuilder bind:rows={rows} bind:pageColor={pageColor} />
 </main>
 
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
