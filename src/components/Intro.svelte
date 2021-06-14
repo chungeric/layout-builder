@@ -11,7 +11,7 @@
       Check out <a href="https://markdownlivepreview.com/" target="_blank" rel="noopener noreferrer">https://markdownlivepreview.com/</a> to see examples of how you can format your content.
     </li>
     <li>
-      Or visit <a href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a> for a more extensive guide on available Markdown options.
+      Or visit <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer">https://www.markdownguide.org/basic-syntax/</a> for a more extensive guide on available Markdown options.
     </li>
   </ul>
 </div>

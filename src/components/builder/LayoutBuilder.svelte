@@ -3,6 +3,7 @@
   import BuilderRow from './BuilderRow.svelte'
   export let rows: RowType[];
   export let pageColor
+  export let font
   function addRow() {
 		rows = [...rows, {
 			numColumns: 1,
@@ -19,6 +20,17 @@
       <h4 class="layout-settings__item--label">Page Color</h4>
       <div class="layout-settings__item--input">
         <input type="color" bind:value={pageColor} />
+      </div>
+    </div>
+    <div class="layout-settings__item">
+      <h4 class="layout-settings__item--label">Font</h4>
+      <div class="layout-settings__item--input">
+        <select bind:value={font}>
+          <option value="PT Sans">PT Sans</option>
+          <option value="Lato">Lato</option>
+          <option value="Roboto Condensed">Roboto Condensed</option>
+          <option value="Source Sans Pro">Source Sans Pro</option>
+        </select>
       </div>
     </div>
   </div>
@@ -52,5 +64,9 @@
     margin-right: 10px;
     margin-top: 0;
     margin-bottom: 0;
+  }
+  select {
+    padding: 1px 2px;
+    font-size: 0.9em;
   }
 </style>

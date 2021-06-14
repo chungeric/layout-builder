@@ -8,15 +8,18 @@
   import marked from "marked";
   import type { RowType } from "../types";
   import { getLightness } from "../utils/getLightness";
+  import { getGFQuery } from "../utils/getGFQuery";
   export let rows: RowType[];
   export let pageColor
+  export let font
   $: textColor = getLightness(pageColor) > 0.5 ? '#000' : '#fff'
 </script>
 
 <div class="layout-preview-container">
   <h2>Layout Preview</h2>
+  <!-- Anything WITHIN this preview container is included in the code output -->
   <div bind:this={preview}>
-    <div id="layout" style={`background: ${pageColor}; color: ${textColor};`}>
+    <div id="layout" style={`background: ${pageColor}; color: ${textColor}; font-family: ${font};`}>
       {#each rows as row}
         <div class="layout__row">
           <div class="layout__columns">
@@ -39,7 +42,6 @@
         padding: 30px;
         color: #333;
         line-height: 1.4;
-        font-family: 'PT Sans', sans-serif;
       }
       .layout__scrollable {
         overflow: auto;
@@ -76,6 +78,7 @@
         color: #224987;
       }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family={getGFQuery(font)}" rel="stylesheet">
   </div>
 </div>
 
