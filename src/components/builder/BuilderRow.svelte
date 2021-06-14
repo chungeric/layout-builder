@@ -1,7 +1,9 @@
 <script lang="ts">
   import Radio from '../../inputs/Radio.svelte'
+  import type { RowType } from '../../types';
   export let rowIndex;
-  export let row;
+  export let row: RowType;
+  export let rows: RowType[];
   function selectNumCols(e) {
     const newNumColumns = parseInt(e.target.value)
     row.numColumns = newNumColumns
@@ -15,11 +17,38 @@
   function toggleScrollable() {
     row.scrollable = !row.scrollable
   }
+  function addRow(i) {
+    const rowsCopy = rows.slice(0)
+    rowsCopy.splice(i, 0, {
+      numColumns: 1,
+      scrollable: false,
+      columns: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.']
+    })
+    return rowsCopy
+  }
+  function addRowAfter() {
+    rows = addRow(rowIndex + 1)
+  }
+  function addRowBefore() {
+    rows = addRow(rowIndex)
+  }
+  function deleteRow() {
+    const rowsCopy = rows.slice(0)
+    rowsCopy.splice(rowIndex, 1)
+    rows = rowsCopy
+  }
 </script>
 
 
 <div class="builder-row-container">
-  <h3 class="">Row {rowIndex + 1}</h3>
+  <div class="builder-row-header">
+    <h3 class="">Row {rowIndex + 1}</h3>
+    <div>
+      <button on:click={addRowAfter}>Add Row After +</button>
+      <button on:click={addRowBefore}>Add Row Before +</button>
+      <button on:click={deleteRow}>Delete Row -</button>
+    </div>
+  </div>
   <div class="options">
     <div>
       <h4>Number of Columns</h4>
@@ -58,12 +87,27 @@
     padding: 0 20px 20px;
     margin-bottom: 30px;
   }
-  .builder-row-container > h3 {
+  .builder-row-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     margin-left: -20px;
     margin-right: -20px;
     padding: 15px 20px;
     background: hsl(0, 0%, 92%);
+  }
+  .builder-row-header button:last-of-type {
+    margin-right: 0;
+  }
+  .builder-row-header button {
+    margin: 4px 4px 4px 0;
+  }
+  .builder-row-header > h3 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 20px;
   }
   .options {
     margin-bottom: 30px;

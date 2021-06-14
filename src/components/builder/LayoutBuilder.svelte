@@ -36,10 +36,10 @@
   </div>
   <div>
     {#each rows as row, i}
-      <BuilderRow rowIndex={i} bind:row={row} />
+      <BuilderRow rowIndex={i} bind:row={row} bind:rows={rows} />
     {/each}
   </div>
-  <button on:click={addRow}>Add Row</button>
+  <button on:click={addRow}>Add Row +</button>
 </div>
 
 <style>
@@ -56,9 +56,6 @@
     width: 100%;
     max-width: 250px;
     margin-bottom: 15px;
-  }
-  .layout-settings__item > * {
-    /* flex: 1 1 auto; */
   }
   .layout-settings__item--label {
     margin-right: 10px;
