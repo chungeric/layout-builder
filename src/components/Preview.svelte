@@ -16,9 +16,10 @@
 </script>
 
 <div class="layout-preview-container">
-  <h2>Layout Preview</h2>
+  <h2>Preview</h2>
   <!-- Anything WITHIN this preview container is included in the code output -->
   <div bind:this={preview}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <div id="layout" style={`background: ${pageColor}; color: ${textColor}; font-family: ${font};`}>
       {#each rows as row}
         <div class="layout__row">
@@ -31,12 +32,8 @@
           </div>
         </div>
       {/each}
-      <center class="credit">Built with https://clubpal.vercel.app/</center>
     </div>
     <style>
-      .credit {
-        opacity: 0.1;
-      }
       #layout {
         background: hsl(0, 0%, 96%);
         padding: 30px;

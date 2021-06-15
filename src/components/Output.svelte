@@ -13,7 +13,7 @@
 
 <div class="output-container">
   <h2>Code Output:</h2>
-  <p>Copy and paste the output below into your club page editor.</p>
+  <p>Copy and paste the output below straight into your HTML file.</p>
 
   <!-- Output -->
   <textarea readonly rows="12" bind:this={output}></textarea>
